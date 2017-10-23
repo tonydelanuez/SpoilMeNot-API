@@ -1,7 +1,7 @@
 <?php
 function addWords($list_id, $new_words, $conn){
 	$data = array();
-	$query = 'INSERT INTO words (word, list) VALUES ';
+	$query = 'REPLACE INTO words (word, list) VALUES ';
 	foreach($new_words as $row){
 		$data[] = '("'.$row.'", '.$list_id.')';
 	}
@@ -13,11 +13,7 @@ function addWords($list_id, $new_words, $conn){
 	}
 	$stmt->bind_param('i', $list_id);
 	$stmt->execute();
-	if(!$stmt){
-		$stmt-close();
-		return False;
-	}
-	$stmt->close();
-	return True;
+	$num_rows = mysqli_affected_rows($conn);
+	return $num_rows;
 }
 ?>

@@ -8,7 +8,7 @@ function getWords($list_id, $conn){
 	}
 	$stmt->bind_param('i', $list_id);
 	$stmt->execute();
-	$stmt->bind_result($id, $word, $list);
+	$stmt->bind_result($word, $list);
 	while($stmt->fetch()){
 		array_push($words, htmlspecialchars($word));
 	}

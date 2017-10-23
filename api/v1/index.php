@@ -61,8 +61,11 @@ switch($response['command']){
 				$response['message'] = "Empty word list!";
 				$response['status'] = 400;
 			} else {
-				if(addWords($response['wordListID'], $words, $mysqli)){
-					$response['message'] = "Successfully added words to the wordlist!";
+				$rows_added = addWords($response['wordListID'], $words, $mysqli);
+				if($rows_added > 0 ){
+					$response['message'] = "$rows_added words were added or updated in the wordlist";
+				} else {
+					$response['message'] = "No words were added to the wordlist.";
 				}
 			}
 		} else {
