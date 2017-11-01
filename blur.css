@@ -1,0 +1,5 @@
+.blur-text
+{
+  color: transparent !important;
+  text-shadow: 0 0 15px #000;
+}
