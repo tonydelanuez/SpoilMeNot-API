@@ -1,0 +1,26 @@
+{
+"manifest_version": 2,
+    "name": "SpoilMe Not",
+    "description": "block certain content from showing up as you browse the internet",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "permissions": [
+                "storage"
+            ],
+            "js": [
+                "jquery-3.2.1.min.js", "content.js"
+            ],
+            "css": ["blur.css"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+    "scripts": [
+        "jquery-3.2.1.min.js", "background.js"
+    ]
+}
+}
