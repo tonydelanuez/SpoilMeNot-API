@@ -15,4 +15,3 @@ function getWords($list_id, $conn){
 	$stmt->close();
 	return $words;
 }
-?>

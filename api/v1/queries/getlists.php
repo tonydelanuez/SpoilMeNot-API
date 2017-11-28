@@ -19,4 +19,3 @@ function getLists($conn){
 	$stmt->close();
 	return $lists;
 }
-?>

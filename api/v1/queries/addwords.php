@@ -3,7 +3,9 @@ function addWords($list_id, $new_words, $conn){
 	$data = array();
 	$query = 'REPLACE INTO words (word, list) VALUES ';
 	foreach($new_words as $row){
-		$data[] = '("'.$row.'", '.$list_id.')';
+		if(!(ctype_space($row) || $row == "")){
+			$data[] = '("'.$row.'", '.$list_id.')';
+		}
 	}
 	$query .= implode(',', $data);
 	$stmt = $conn->prepare($query);
@@ -11,9 +13,7 @@ function addWords($list_id, $new_words, $conn){
 		printf("Query Prep Failed: %s\n", $conn->error);
 		exit;
 	}
-	$stmt->bind_param('i', $list_id);
 	$stmt->execute();
 	$num_rows = mysqli_affected_rows($conn);
 	return $num_rows;
 }
-?>
