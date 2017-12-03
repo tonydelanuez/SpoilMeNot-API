@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="popup.js"></script>
+
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="popup.css">
+
+</head>
+<body>
+
+
+<div class="container">
+
+	<div class="pages" id="loginPage">
+		<div class="form-signin">
+	          <h1 class="form-signin-heading">SpoilMe Not</h1>
+	          <h6 class="form-signin-heading">Don't let the internet spoil you. Let us do that.</h6>
+	          <img src="https://media.giphy.com/media/Wv2PFkyioGbTi/giphy.gif">
+	          <h3 id="signInHeading">Sign In: </h3>
+	          <label for="inputEmail" class="sr-only">Email</label>
+        	  <input type="email" id="userSignin" class="form-control" placeholder="Enter Email" value="" autofocus>
+        	  <label for="inputPassword" class="sr-only">Password</label>
+        	  <input type="password" id="userPassword" class="form-control" placeholder="Enter Password">
+	          <input class="btn btn-lg btn-primary btn-block" id="loginButton" type="button" value="Sign In">
+	          <h6 id="orHeading">Or</h6>
+	          <input class="btn btn-lg btn-primary btn-block" type="button" id="createAccountButton" value="Create Account">
+	    </div>
+	</div>
+
+	<!-- Create Account Page -->
+	<!-- This is all the code for creating an account -->
+	<!-- IDs for the inputs include: newEmail, newPassword, newVerifiedPassword newPhone, newGarageID -->
+	<div class="pages" id="accountCreationPage">
+	    <div class="form-signin">
+	    <h2 class="form-signin-heading">Create an Account</h2>
+	    <label for="inputEmail" class="sr-only">Email</label>
+	    <input type="email" id="newEmail" class="form-control" placeholder="Enter Email" value="" autofocus>
+	    <label for="inputPassword" class="sr-only">Password</label>
+	    <input type="password" id="newPassword" class="form-control" placeholder="Create Password">
+	    <label for="inputPassword" class="sr-only">Verify Password</label>
+	    <input type="password" id="newVerifiedPassword" class="form-control" placeholder="Retype Password">
+	    <input class="btn btn-lg btn-primary btn-block" type="button" id="createAccountSubmit" value="Create an Account">
+	    <input class="btn btn-lg btn-primary btn-block" type="button" id="backToSignin" value="Back to Sign In">
+	    </div>
+	</div>
+
+	<div class="pages" id="alertPage" style="min-width:300px">
+		<!-- User Word Submission Divider -->
+		<div>
+			<div>
+				<div>
+		<p >Make sure to restart your browser for changes to take effect </p>
+		<button type="submit" id="continueToUser" class="btn btn-lg btn-primary btn-block" value="Submit">Ok</button>
+		<br>
+	</div>
+</div>
+</div>
+	</div>
+
+	<!-- USER PAGE 2 -->
+
+	<div class="pages" id="userPage">
+		<!-- User Word Submission Divider -->
+		<h3 >Welcome <span id="userIdentification"></span></h3>
+		<button type="submit" id="refresh" class="btn btn-lg btn-primary btn-block" value="Submit" style="margin-bottom: 10px">Refresh</button>
+
+		<!-- Word Lists Divider -->
+		<div id="wordLists">
+			<h3>Your Blocked Words:</h3>
+			<div>
+				<ul id="list"></ul>
+			</div>
+		</div>
+
+		<!-- Adding to Word List -->
+		<div>
+			<h3>Block this word:</h3>
+			<textarea id="userBlockedWord" rows="1" cols="25" placeholder="Block your own words"></textarea>
+			<button type="submit" id="blockThis" class="btn btn-lg btn-primary btn-block" value="Submit">Block</button>
+		</div>
+
+		<!-- Delete from Word List -->
+		<div>
+			<h3>Delete this word:</h3>
+			<textarea id="userDeletedWord" rows="1" cols="25" placeholder="Delete your own words"></textarea>
+			<button type="submit" id="deleteThis" class="btn btn-lg btn-danger btn-block" value="Submit">Delete</button>
+		</div>
+
+		<!-- Search & View Section for Word Lists -->
+		<div id="wordListViewer">
+			<h3>Pick Public Word Lists:</h3>
+			<div id="wordListButtons">
+				<!-- Code for PUBLIC LIST BUTTONS GOES HERE -->
+				<div class="btn-group" role="group" aria-label="Basic example" style="padding-bottom:10px">
+				  <button type="button" id="gotAdd" class="btn btn-secondary" style="margin-right:10px">Add Game of Thrones</button>
+				  <button type="button" id="gotDelete" class="btn btn-secondary">Remove Game of Thrones</button>
+				</div>
+				<!-- add a break here how???? <br? doesn't seem to work? -->
+				<div class="btn-group 1" role="group 1" aria-label="Basic example 1" style="padding-bottom:10px">
+				  <button type="button" id="bbAdd" class="btn btn-secondary" style="margin-right:10px">Add Breaking Bad</button>
+				  <button type="button" id="bbDelete" class="btn btn-secondary">Remove Breaking Bad</button>
+				</div>
+
+				<div class="btn-group 1" role="group 1" aria-label="Basic example 1" style="padding-bottom:10px">
+				  <button type="button" id="gbpAdd" class="btn btn-secondary" style="margin-right:10px">Add Green Bay Packers</button>
+				  <button type="button" id="gbpDelete" class="btn btn-secondary">Remove Green Bay Packers</button>
+				</div>
+				<div class="btn-group 1" role="group 1" aria-label="Basic example 1" style="padding-bottom:10px">
+				  <button type="button" id="mrAdd" class="btn btn-secondary" style="margin-right:10px">Add Mr. Robot</button>
+				  <button type="button" id="mrDelete" class="btn btn-secondary">Remove Mr. Robot</button>
+				</div>
+
+				<div class="btn-group 1" role="group 1" aria-label="Basic example 1" style="padding-bottom:10px">
+				  <button type="button" id="narcAdd" class="btn btn-secondary" style="margin-right:10px">Add Narcos</button>
+				  <button type="button" id="narcDelete" class="btn btn-secondary">Remove Narcos</button>
+				</div>				
+
+			</div>
+		</div>
+		<br>
+
+		<div id="logoutButton">
+			<button type="submit" class="btn btn-sm btn-success btn-block" id="logoutButton" value="Submit">Logout</button>
+			<br>
+		</div>
+		
+
+	</div>
+</div>
+
+
+
+	<script type="text/javascript" src="popup.js"></script>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+</body>
+</html>

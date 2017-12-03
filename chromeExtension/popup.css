@@ -1,0 +1,17 @@
+.form-signin-heading{
+	text-align: center;
+}
+
+#signInHeading{
+	margin-top: .5cm;
+}
+
+#createAccountButton {
+	margin-top: .5cm;
+	margin-bottom: .5cm;
+}
+
+#orHeading {
+	margin-top: .5cm;
+	text-align: center;
+}

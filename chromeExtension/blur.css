@@ -2,4 +2,10 @@
 {
   color: transparent !important;
   text-shadow: 0 0 15px #000;
+
+}
+/*if i find the alt tag to blur an image just need to add this to it*/
+.image-blur
+{
+  filter: blur(5px);
 }
